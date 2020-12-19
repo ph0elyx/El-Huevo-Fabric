@@ -22,6 +22,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -349,10 +350,8 @@ public class ElHuevoEntity extends TameableEntity {
         }
 
     }
-//hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeee
     public boolean isBreedingItem(ItemStack stack) {
-        Item item = stack.getItem();
-        return item.isFood() && item.getFoodComponent().isMeat();
+        return TAMING_INGREDIENT.test(stack);
     }
 
     public int getLimitPerChunk() {
@@ -431,7 +430,10 @@ public class ElHuevoEntity extends TameableEntity {
         return new Vec3d(0.0D, (double)(0.6F * this.getStandingEyeHeight()), (double)(this.getWidth() * 0.4F));
     }
 
+    private static final Ingredient TAMING_INGREDIENT;
+
     static {
+        TAMING_INGREDIENT = Ingredient.ofItems(Items.COD, Items.SALMON);
         BEGGING = DataTracker.registerData(ElHuevoEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
         COLLAR_COLOR = DataTracker.registerData(ElHuevoEntity.class, TrackedDataHandlerRegistry.INTEGER);
         FOLLOW_TAMED_PREDICATE = (livingEntity) -> {

@@ -1,40 +1,41 @@
-
 {
   "schemaVersion": 1,
-  "id": "modid",
-  "version": "${version}",
+  "id": "elhuevo",
+  "version": "1.0.0",
 
-  "name": "Fabric Example Mod",
-  "description": "Draylar's Fabric Example Mod!",
+  "name": "El huevo",
+  "description": "Adds El huevo to minecraft!",
   "authors": [
-    "Draylar"
+    "steveplayzz_",
+    "evo_934"
   ],
   "contact": {
-    "homepage": "https://github.com/Draylar",
-    "sources": "https://github.com/Draylar/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/elhuevo-fabric",
+    "sources": "https://github.com/StevePlayzz/El-huevo"
   },
 
-  "license": "GPLv3",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/elhuevo/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.github.draylar.modid.ExampleMod"
+      "com.github.Evoslab.elhuevo.Elhuevo"
     ],
     "client": [
-      "com.github.draylar.modid.ExampleModClient"
+      "com.github.Evoslab.elhuevo.ElhuevoClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "elhuevo.mixins.json"
   ],
 
-  "requires": {
-    "fabricloader": ">=0.4.0",
-    "fabric": "*"
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
   },
   "suggests": {
-    "flamingo": "*"
+    "another-mod": "*"
   }
 }

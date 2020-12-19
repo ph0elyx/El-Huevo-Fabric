@@ -257,14 +257,14 @@ public class ElHuevoEntity extends TameableEntity {
         }
     }
 
-    public boolean tryAttack(Entity target) {
-        boolean bl = target.damage(DamageSource.mob(this), (float)((int)this.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE)));
-        if (bl) {
-            this.dealDamage(this, target);
-        }
-
-        return bl;
+    private float getAttackDamage() {
+        return (float)this.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
     }
+
+    public boolean tryAttack(Entity target) {
+        return target.damage(DamageSource.mob(this), this.getAttackDamage());
+    }
+
 
     public void setTamed(boolean tamed) {
         super.setTamed(tamed);

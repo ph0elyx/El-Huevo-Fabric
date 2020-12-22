@@ -14,6 +14,7 @@ public class ElHuevoEntityModel extends EntityModel<ElHuevoEntity> {
     private final ModelPart rightleg;
     private final ModelPart bodyhead;
     private final ModelPart tail;
+
     private final ModelPart bb_main;
     public ElHuevoEntityModel() {
         textureWidth = 32;
@@ -59,6 +60,11 @@ public class ElHuevoEntityModel extends EntityModel<ElHuevoEntity> {
         bone.pitch = x;
         bone.yaw = y;
         bone.roll = z;
+    }
+
+    @Override
+    public void animateModel(ElHuevoEntity entity, float limbAngle, float limbDistance, float tickDelta) {
+        super.animateModel(entity, limbAngle, limbDistance, tickDelta);
     }
 
 }

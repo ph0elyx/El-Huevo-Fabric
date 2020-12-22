@@ -13,6 +13,6 @@ public class ElHuevoEntityRender extends MobEntityRenderer<ElHuevoEntity, ElHuev
 
     @Override
     public Identifier getTexture(ElHuevoEntity entity) {
-        return new Identifier("elhuevo", "textures/entity/elhueve.png");
+        return new Identifier("elhuevo", "textures/entity/elhueve/elhueve.png");
     }
 }

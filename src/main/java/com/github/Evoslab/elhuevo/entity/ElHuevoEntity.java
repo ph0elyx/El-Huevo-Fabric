@@ -265,7 +265,6 @@ public class ElHuevoEntity extends TameableEntity {
         return target.damage(DamageSource.mob(this), this.getAttackDamage());
     }
 
-
     public void setTamed(boolean tamed) {
         super.setTamed(tamed);
         if (tamed) {

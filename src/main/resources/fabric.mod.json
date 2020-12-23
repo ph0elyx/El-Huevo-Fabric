@@ -3,15 +3,15 @@
   "id": "elhuevo",
   "version": "1.0.0",
 
-  "name": "El huevo",
-  "description": "Adds El huevo to minecraft!",
+  "name": "El Huevo",
+  "description": "Adds El Huevo to minecraft!",
   "authors": [
     "steveplayzz_",
     "evo_934"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/elhuevo-fabric",
-    "sources": "https://github.com/StevePlayzz/El-huevo"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/El-Huevo-Fabric",
+    "sources": "https://github.com/StevePlayzz/El-Huevo-Fabric"
   },
 
   "license": "MIT",

@@ -8,7 +8,7 @@ public class ElHuevoEntityRender extends MobEntityRenderer<ElHuevoEntity, ElHuev
 
 
     public ElHuevoEntityRender(EntityRenderDispatcher entityRenderDispatcher) {
-        super(entityRenderDispatcher, new ElHuevoEntityModel(), 0.2f);
+        super(entityRenderDispatcher, new ElHuevoEntityModel(), 0.3f);
     }
 
     @Override

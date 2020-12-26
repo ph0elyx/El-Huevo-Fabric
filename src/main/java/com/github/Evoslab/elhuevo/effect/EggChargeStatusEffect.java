@@ -24,7 +24,7 @@ public class EggChargeStatusEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         if (entity instanceof PlayerEntity) {
-            ((PlayerEntity) entity).addExperience(1 << amplifier); // Higher amplifier gives you EXP faster
+            //((PlayerEntity) entity).addExperience(1 << amplifier); // Higher amplifier gives you EXP faster
         }
     }
 }

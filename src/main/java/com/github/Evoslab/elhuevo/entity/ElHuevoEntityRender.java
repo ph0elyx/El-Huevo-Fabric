@@ -9,10 +9,12 @@ public class ElHuevoEntityRender extends MobEntityRenderer<ElHuevoEntity, ElHuev
 
     public ElHuevoEntityRender(EntityRenderDispatcher entityRenderDispatcher) {
         super(entityRenderDispatcher, new ElHuevoEntityModel(), 0.3f);
+        this.addFeature(new ElHuevoClothingFeatureRenderer(this));
     }
 
     @Override
     public Identifier getTexture(ElHuevoEntity entity) {
         return new Identifier("elhuevo", "textures/entity/elhueve/elhueve.png");
     }
+
 }

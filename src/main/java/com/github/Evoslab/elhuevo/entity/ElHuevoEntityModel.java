@@ -50,7 +50,6 @@ public class ElHuevoEntityModel extends EntityModel<ElHuevoEntity> {
     }
     @Override
     public void render(MatrixStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-
         leftleg.render(matrixStack, buffer, packedLight, packedOverlay);
         rightleg.render(matrixStack, buffer, packedLight, packedOverlay);
         bodyhead.render(matrixStack, buffer, packedLight, packedOverlay);
@@ -63,8 +62,10 @@ public class ElHuevoEntityModel extends EntityModel<ElHuevoEntity> {
     }
 
     @Override
-    public void animateModel(ElHuevoEntity entity, float limbAngle, float limbDistance, float tickDelta) {
-        super.animateModel(entity, limbAngle, limbDistance, tickDelta);
+    public void animateModel(ElHuevoEntity elHuevoEntity, float limbAngle, float limbDistance, float tickDelta) {
+        if (elHuevoEntity.isInSittingPose()) {
+
+        }
     }
 
 }

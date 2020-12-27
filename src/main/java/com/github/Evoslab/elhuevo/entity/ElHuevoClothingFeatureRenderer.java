@@ -12,10 +12,10 @@ import net.minecraft.util.Identifier;
 @Environment(EnvType.CLIENT)
 public class ElHuevoClothingFeatureRenderer extends FeatureRenderer<ElHuevoEntity, ElHuevoEntityModel> {
 
-    public static final Identifier SKIN_BLACK = new Identifier("elhuevo","textures/entity/elhueve/red.png");
-    public static final Identifier SKIN_RED = new Identifier("elhuevo","textures/entity/elhueve/black.png");
+    public static final Identifier SKIN_BLACK = new Identifier("elhuevo","textures/entity/elhueve/black.png");
+    public static final Identifier SKIN_RED = new Identifier("elhuevo","textures/entity/elhueve/red.png");
     public static final Identifier SKIN_GREEN = new Identifier("elhuevo","textures/entity/elhueve/green.png");
-    public static final Identifier SKIN_BROWN = new Identifier("elhuevo","textures/entity/elhueve/green.png");
+    public static final Identifier SKIN_BROWN = new Identifier("elhuevo","textures/entity/elhueve/brown.png");
     public static final Identifier SKIN_BLUE = new Identifier("elhuevo","textures/entity/elhueve/blue.png");
     public static final Identifier SKIN_PURPLE = new Identifier("elhuevo","textures/entity/elhueve/purple.png");
     public static final Identifier SKIN_CYAN = new Identifier("elhuevo","textures/entity/elhueve/cyan.png");
@@ -27,7 +27,7 @@ public class ElHuevoClothingFeatureRenderer extends FeatureRenderer<ElHuevoEntit
     public static final Identifier SKIN_LIGHT_BLUE  = new Identifier("elhuevo","textures/entity/elhueve/light_blue.png");
     public static final Identifier SKIN_MAGENTA  = new Identifier("elhuevo","textures/entity/elhueve/magenta.png");
     public static final Identifier SKIN_ORANGE  = new Identifier("elhuevo","textures/entity/elhueve/orange.png");
-    public static final Identifier SKIN_WHITE  = new Identifier("elhuevo","textures/entity/elhueve/gray.png");
+    public static final Identifier SKIN_WHITE  = new Identifier("elhuevo","textures/entity/elhueve/white.png");
 
     public ElHuevoClothingFeatureRenderer(FeatureRendererContext<ElHuevoEntity, ElHuevoEntityModel> featureRendererContext) {
         super(featureRendererContext);

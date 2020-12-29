@@ -15,8 +15,8 @@ public class ElHuevoEntityModel extends EntityModel<ElHuevoEntity> {
     private final ModelPart rightleg;
     private final ModelPart bodyhead;
     private final ModelPart tail;
-
     private final ModelPart bb_main;
+
     public ElHuevoEntityModel() {
         textureWidth = 32;
         textureHeight = 32;
@@ -65,7 +65,6 @@ public class ElHuevoEntityModel extends EntityModel<ElHuevoEntity> {
     @Override
     public void animateModel(ElHuevoEntity elHuevoEntity, float limbAngle, float limbDistance, float tickDelta) {
         if (elHuevoEntity.isInSittingPose()) {
-            /*
             leftleg.setPivot(-1.5F, 22.5F, 0.5F);
             rightleg.setPivot(1.5F, 22.5F, 0.5F);
             bodyhead.setPivot(0.0F, 18.4F, -0.2F);
@@ -77,7 +76,18 @@ public class ElHuevoEntityModel extends EntityModel<ElHuevoEntity> {
             tail.setTextureOffset(17, 0).addCuboid(-1.0F, 0.0F, 0.5F, 2.0F, 2.0F, 1.0F, 0.0F, false);
             bb_main.setPivot(0.0F, 24.0F, 0.0F);
             bb_main.setTextureOffset(0, 18).addCuboid(-3.0F, -8.0F, -2.0F, 6.0F, 8.0F, 5.0F, 0.1F, false);
-             */
+       }else {
+            leftleg.setPivot(-1.5F, 22.5F, 0.5F);
+            rightleg.setPivot(1.5F, 22.5F, 0.5F);
+            bodyhead.setPivot(0.0F, 18.4F, -0.2F);
+            bodyhead.setTextureOffset(26, 3).addCuboid(2.0F, -4.4F, 0.2F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+            bodyhead.setTextureOffset(26, 0).addCuboid(-4.0F, -4.4F, 0.2F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+            bodyhead.setTextureOffset(0, 13).addCuboid(-2.0F, -0.4F, -2.8F, 4.0F, 2.0F, 1.0F, 0.0F, false);
+            bodyhead.setTextureOffset(0, 0).addCuboid(-3.0F, -3.4F, -1.8F, 6.0F, 8.0F, 5.0F, 0.0F, false);
+            tail.setPivot(0.0F, 3.6F, 2.7F);
+            tail.setTextureOffset(17, 0).addCuboid(-1.0F, -1.0F, 0.5F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+            bb_main.setPivot(0.0F, 24.0F, 0.0F);
+            bb_main.setTextureOffset(0, 18).addCuboid(-3.0F, -9.0F, -2.0F, 6.0F, 8.0F, 5.0F, 0.1F, false);
         }
     }
 

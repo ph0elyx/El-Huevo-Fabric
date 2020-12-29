@@ -84,7 +84,5 @@ public class ElHuevoClothingFeatureRenderer extends FeatureRenderer<ElHuevoEntit
             float[] fs = elHuevoEntity.getClothingColor().getColorComponents();
             renderModel(this.getContextModel(), SKIN_WHITE, matrixStack, vertexConsumerProvider, i, elHuevoEntity, fs[0], fs[1], fs[2]);
         }
-
     }
-
 }

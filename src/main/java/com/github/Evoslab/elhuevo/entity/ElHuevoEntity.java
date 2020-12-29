@@ -41,6 +41,7 @@ public class ElHuevoEntity extends TameableEntity {
     @Override
     public void initGoals() {
 
+        //this.go
         this.goalSelector.add(1, new WanderAroundGoal(this, 0.16D));
         this.goalSelector.add(2, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(2, new SitGoal(this));

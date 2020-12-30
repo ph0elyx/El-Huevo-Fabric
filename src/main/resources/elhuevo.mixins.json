@@ -3,7 +3,10 @@
   "package": "com.github.Evoslab.elhuevo.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-
+  ],
+  "client": [
+  ],
+  "server": [
   ],
   "injectors": {
     "defaultRequire": 1

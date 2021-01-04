@@ -3,6 +3,7 @@ package com.github.Evoslab.elhuevo;
 import com.github.Evoslab.elhuevo.entity.ElHuevoEntity;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
@@ -13,7 +14,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -30,7 +31,7 @@ public class Elhuevo implements ModInitializer {
 	public void onInitialize() {
 
 		BiomeModifications.addSpawn(
-				ctx -> ctx.getBiome().getCategory() == Biome.Category.ICY,
+				BiomeSelectors.includeByKey(BiomeKeys.ICE_SPIKES, BiomeKeys.SNOWY_TAIGA, BiomeKeys.SNOWY_TAIGA_HILLS, BiomeKeys.SNOWY_TUNDRA),
 				SpawnGroup.CREATURE,
 				Elhuevo.EL_HUEVE,
 				5 /* weight */,

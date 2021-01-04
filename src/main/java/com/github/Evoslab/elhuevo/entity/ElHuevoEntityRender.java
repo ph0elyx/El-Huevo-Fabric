@@ -4,11 +4,11 @@ import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
 
-public class ElHuevoEntityRender extends MobEntityRenderer<ElHuevoEntity, ElHuevoEntityModel> {
+public class ElHuevoEntityRender extends MobEntityRenderer<ElHuevoEntity, ElHuevoEntityModel<ElHuevoEntity>> {
 
 
     public ElHuevoEntityRender(EntityRenderDispatcher entityRenderDispatcher) {
-        super(entityRenderDispatcher, new ElHuevoEntityModel(), 0.3f);
+        super(entityRenderDispatcher, new ElHuevoEntityModel<ElHuevoEntity>(), 0.3f);
         this.addFeature(new ElHuevoClothingFeatureRenderer(this));
     }
 

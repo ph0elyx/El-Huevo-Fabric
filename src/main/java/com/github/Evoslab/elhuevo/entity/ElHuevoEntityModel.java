@@ -9,6 +9,7 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.util.math.MathHelper;
 
 public class ElHuevoEntityModel<E extends TameableEntity> extends EntityModel<ElHuevoEntity> {
     private ModelPart leftleg;
@@ -48,8 +49,9 @@ public class ElHuevoEntityModel<E extends TameableEntity> extends EntityModel<El
     }
 
     @Override
-    public void setAngles(ElHuevoEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
-        //previously the render function, render code was moved to a method below
+    public void setAngles(ElHuevoEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        this.leftleg.pitch = MathHelper.cos(limbSwing * 0.6662F + 3.1415927F) * 1.4F * limbSwingAmount;
+        this.rightleg.pitch = MathHelper.cos(limbSwing * 0.6662F + 3.1415927F) * 1.4F * limbSwingAmount;
     }
     @Override
     public void render(MatrixStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
@@ -69,7 +71,6 @@ public class ElHuevoEntityModel<E extends TameableEntity> extends EntityModel<El
             if (elHuevoEntity.isInSittingPose()) {
                 this.leftleg = new ModelPart(this);
                 this.leftleg.setPivot(-1.5F, 22.5F, 0.5F);
-
 
                 this.cube_r1 = new ModelPart(this);
                 this.cube_r1.setPivot(0.0F, 0.0F, -3.0F);

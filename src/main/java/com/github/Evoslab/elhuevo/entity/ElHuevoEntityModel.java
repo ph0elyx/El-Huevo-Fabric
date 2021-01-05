@@ -1,5 +1,5 @@
 // Made with Blockbench 3.7.4
-// Exported for Minecraft version 1.16
+// Exported for Minecraft Fabric version 1.16.4
 // Paste this class into your mod and generate all required imports
 
 package com.github.Evoslab.elhuevo.entity;
@@ -11,11 +11,13 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.passive.TameableEntity;
 
 public class ElHuevoEntityModel<E extends TameableEntity> extends EntityModel<ElHuevoEntity> {
-    private final ModelPart leftleg;
-    private final ModelPart rightleg;
-    private final ModelPart bodyhead;
-    private final ModelPart tail;
-    private final ModelPart bb_main;
+    private ModelPart leftleg;
+    private ModelPart rightleg;
+    private ModelPart bodyhead;
+    private ModelPart tail;
+    private ModelPart bb_main;
+    private ModelPart cube_r2;
+    private ModelPart cube_r1;
 
     public ElHuevoEntityModel() {
         textureWidth = 32;
@@ -64,8 +66,66 @@ public class ElHuevoEntityModel<E extends TameableEntity> extends EntityModel<El
 
     @Override
     public void animateModel(ElHuevoEntity elHuevoEntity, float limbAngle, float limbDistance, float tickDelta) {
-        if (elHuevoEntity.isInSittingPose()) {
+            if (elHuevoEntity.isInSittingPose()) {
+                this.leftleg = new ModelPart(this);
+                this.leftleg.setPivot(-1.5F, 22.5F, 0.5F);
 
-        }
+
+                this.cube_r1 = new ModelPart(this);
+                this.cube_r1.setPivot(0.0F, 0.0F, -3.0F);
+                this.leftleg.addChild(cube_r1);
+                this.setRotationAngle(cube_r1, -1.5708F, 0.0F, 0.0F);
+                this.cube_r1.setTextureOffset(22, 6).addCuboid(-1.0F, -0.5F, -0.5F, 2.0F, 1.0F, 2.0F, 0.0F, false);
+
+                this.rightleg = new ModelPart(this);
+                this.rightleg.setPivot(1.5F, 22.5F, 0.5F);
+
+
+                this.cube_r2 = new ModelPart(this);
+                this.cube_r2.setPivot(0.0F, 0.0F, -3.0F);
+                this.rightleg.addChild(cube_r2);
+                this.setRotationAngle(cube_r2, -1.5708F, 0.0F, 0.0F);
+                this.cube_r2.setTextureOffset(22, 9).addCuboid(-1.0F, -0.5F, -0.5F, 2.0F, 1.0F, 2.0F, 0.0F, false);
+
+                this.bodyhead = new ModelPart(this);
+                this.bodyhead.setPivot(0.0F, 18.4F, -0.2F);
+                this.bodyhead.setTextureOffset(26, 3).addCuboid(2.0F, -3.4F, 0.2F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+                this.bodyhead.setTextureOffset(26, 0).addCuboid(-4.0F, -3.4F, 0.2F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+                this.bodyhead.setTextureOffset(0, 13).addCuboid(-2.0F, 0.6F, -2.8F, 4.0F, 2.0F, 1.0F, 0.0F, false);
+                this.bodyhead.setTextureOffset(0, 0).addCuboid(-3.0F, -2.4F, -1.8F, 6.0F, 8.0F, 5.0F, 0.0F, false);
+
+                this.tail = new ModelPart(this);
+                this.tail.setPivot(0.0F, 3.6F, 2.7F);
+                this.bodyhead.addChild(tail);
+                this.tail.setTextureOffset(17, 0).addCuboid(-1.0F, 0.0F, 0.5F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+
+                this.bb_main = new ModelPart(this);
+                this.bb_main.setPivot(0.0F, 24.0F, 0.0F);
+                this.bb_main.setTextureOffset(0, 18).addCuboid(-3.0F, -8.0F, -2.0F, 6.0F, 8.0F, 5.0F, 0.1F, false);
+            } else {
+                this.leftleg = new ModelPart(this);
+                this.leftleg.setPivot(-1.5F, 22.5F, 0.5F);
+                this.leftleg.setTextureOffset(22, 6).addCuboid(-1.0F, 0.5F, -1.0F, 2.0F, 1.0F, 2.0F, 0.0F, false);
+
+                this.rightleg = new ModelPart(this);
+                this.rightleg.setPivot(1.5F, 22.5F, 0.5F);
+                this.rightleg.setTextureOffset(22, 9).addCuboid(-1.0F, 0.5F, -1.0F, 2.0F, 1.0F, 2.0F, 0.0F, false);
+
+                this.bodyhead = new ModelPart(this);
+                this.bodyhead.setPivot(0.0F, 18.4F, -0.2F);
+                this.bodyhead.setTextureOffset(26, 3).addCuboid(2.0F, -4.4F, 0.2F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+                this.bodyhead.setTextureOffset(26, 0).addCuboid(-4.0F, -4.4F, 0.2F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+                this.bodyhead.setTextureOffset(0, 13).addCuboid(-2.0F, -0.4F, -2.8F, 4.0F, 2.0F, 1.0F, 0.0F, false);
+                this.bodyhead.setTextureOffset(0, 0).addCuboid(-3.0F, -3.4F, -1.8F, 6.0F, 8.0F, 5.0F, 0.0F, false);
+
+                this.tail = new ModelPart(this);
+                this.tail.setPivot(0.0F, 3.6F, 2.7F);
+                this.bodyhead.addChild(tail);
+                this.tail.setTextureOffset(17, 0).addCuboid(-1.0F, -1.0F, 0.5F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+
+                this.bb_main = new ModelPart(this);
+                this.bb_main.setPivot(0.0F, 24.0F, 0.0F);
+                this.bb_main.setTextureOffset(0, 18).addCuboid(-3.0F, -9.0F, -2.0F, 6.0F, 8.0F, 5.0F, 0.1F, false);
+            }
         }
 }

@@ -26,10 +26,16 @@ public class ElHuevoEntity extends TameableEntity {
 
     public ElHuevoEntity(EntityType<? extends TameableEntity> entityType, World world) {
         super(entityType, world);
+        this.setTamed(false);
     }
 
     public static DefaultAttributeContainer.Builder createWolfAttributes() {
         return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2D).add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0D).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0D);
+    }
+
+    //check here
+    public void setTamed(boolean tamed) {
+        super.setTamed(tamed);
     }
 
     @Nullable

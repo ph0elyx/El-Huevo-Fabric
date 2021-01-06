@@ -2,21 +2,18 @@ package com.github.Evoslab.elhuevo.misc;
 
 import com.github.Evoslab.elhuevo.Elhuevo;
 import com.github.Evoslab.elhuevo.entity.ElHuevoEntity;
-import net.minecraft.entity.EntityData;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.passive.CatEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.gen.CatSpawner;
+import net.minecraft.world.gen.PhantomSpawner;
 import net.minecraft.world.gen.Spawner;
-import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraft.world.poi.PointOfInterestStorage;
 import net.minecraft.world.poi.PointOfInterestType;
 
@@ -26,7 +23,7 @@ import java.util.Random;
 public class ElhuevoSpawner implements Spawner {
 
     private int ticksUntilNextSpawn;
-    private final int newTickTime = 1200;
+    private final int newTickTime = 1000;
 
     /*
      * And this is where the magic should happen!
@@ -64,7 +61,7 @@ public class ElhuevoSpawner implements Spawner {
 
     private int spawnInHouse(ServerWorld world, BlockPos pos) {
         if (world.getPointOfInterestStorage().count(PointOfInterestType.HOME.getCompletionCondition(), pos, 48, PointOfInterestStorage.OccupationStatus.IS_OCCUPIED) > 4L) {
-            List<CatEntity> list = world.getNonSpectatingEntities(CatEntity.class, (new Box(pos)).expand(48.0D, 8.0D, 48.0D));
+            List<ElHuevoEntity> list = world.getNonSpectatingEntities(ElHuevoEntity.class, (new Box(pos)).expand(48.0D, 8.0D, 48.0D));
             if (list.size() < 5) {
                 return this.spawn(pos, world);
             }

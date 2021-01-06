@@ -23,6 +23,7 @@ public class Elhuevo implements ModInitializer {
 
 	public static final String MODID = "elhuevo";
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
+
 	public static final EntityType<ElHuevoEntity> EL_HUEVE = Registry.register(
 			Registry.ENTITY_TYPE,
 			new Identifier("elhuevo", "elhueve"),
@@ -30,7 +31,6 @@ public class Elhuevo implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
 		BiomeModifications.addSpawn(
 				BiomeSelectors.includeByKey(BiomeKeys.ICE_SPIKES, BiomeKeys.SNOWY_TAIGA, BiomeKeys.SNOWY_TAIGA_HILLS, BiomeKeys.SNOWY_TUNDRA),
 				SpawnGroup.CREATURE,
@@ -48,5 +48,4 @@ public class Elhuevo implements ModInitializer {
 	public static Identifier id(String name) {
 		return new Identifier(MODID, name);
 	}
-
 }

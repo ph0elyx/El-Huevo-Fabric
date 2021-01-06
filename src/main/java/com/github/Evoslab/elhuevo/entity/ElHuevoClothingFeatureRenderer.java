@@ -33,8 +33,71 @@ public class ElHuevoClothingFeatureRenderer extends FeatureRenderer<ElHuevoEntit
         super(featureRendererContext);
     }
 
+    private void renderModelWithSkin(Identifier identifier, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, ElHuevoEntity entity) {
+        float[] colors = entity.getClothingColor().getColorComponents();
+        renderModel(this.getContextModel(), identifier, matrixStack, vertexConsumerProvider, i, entity, colors[0], colors[1], colors[2]);
+    }
+
     @Override
     public void render(MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, ElHuevoEntity elHuevoEntity, float f, float g, float h, float j, float k, float l) {
+        if (elHuevoEntity.isTamed() && !elHuevoEntity.isInvisible()) {
+            Identifier skin;
+
+            switch (elHuevoEntity.getClothingColor()) {
+                case RED:
+                    skin = SKIN_RED;
+                    break;
+                case BLUE:
+                    skin = SKIN_BLUE;
+                    break;
+                case CYAN:
+                    skin = SKIN_CYAN;
+                    break;
+                case GRAY:
+                    skin = SKIN_GRAY;
+                    break;
+                case LIME:
+                    skin = SKIN_LIME;
+                    break;
+                case PINK:
+                    skin = SKIN_PINK;
+                    break;
+                case BLACK:
+                    skin = SKIN_BLACK;
+                    break;
+                case BROWN:
+                    skin = SKIN_BROWN;
+                    break;
+                case GREEN:
+                    skin = SKIN_GREEN;
+                    break;
+                case ORANGE:
+                    skin = SKIN_ORANGE;
+                    break;
+                case PURPLE:
+                    skin = SKIN_PURPLE;
+                    break;
+                case YELLOW:
+                    skin = SKIN_YELLOW;
+                    break;
+                case MAGENTA:
+                    skin = SKIN_MAGENTA;
+                    break;
+                case LIGHT_BLUE:
+                    skin = SKIN_LIGHT_BLUE;
+                    break;
+                case LIGHT_GRAY:
+                    skin = SKIN_LIGHT_GRAY;
+                    break;
+                default:
+                case WHITE:
+                    skin = SKIN_WHITE;
+                    break;
+            }
+            this.renderModelWithSkin(skin, matrixStack, vertexConsumerProvider, i, elHuevoEntity);
+        }
+
+        /*
         if (elHuevoEntity.isTamed() && !elHuevoEntity.isInvisible() && elHuevoEntity.getClothingColor() == DyeColor.RED) {
             float[] fs = elHuevoEntity.getClothingColor().getColorComponents();
             renderModel(this.getContextModel(), SKIN_RED, matrixStack, vertexConsumerProvider, i, elHuevoEntity, fs[0], fs[1], fs[2]);
@@ -84,5 +147,7 @@ public class ElHuevoClothingFeatureRenderer extends FeatureRenderer<ElHuevoEntit
             float[] fs = elHuevoEntity.getClothingColor().getColorComponents();
             renderModel(this.getContextModel(), SKIN_WHITE, matrixStack, vertexConsumerProvider, i, elHuevoEntity, fs[0], fs[1], fs[2]);
         }
+
+         */
     }
 }

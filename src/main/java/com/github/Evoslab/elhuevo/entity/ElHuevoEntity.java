@@ -57,7 +57,7 @@ public class ElHuevoEntity extends TameableEntity {
     }
 
     static {
-        TAMING_INGREDIENT = Ingredient.ofItems(new ItemConvertible[]{Items.EGG});
+        TAMING_INGREDIENT = Ingredient.ofItems(Items.EGG);
         CLOTHING_COLOR = DataTracker.registerData(ElHuevoEntity.class, TrackedDataHandlerRegistry.INTEGER);
     }
     public void initDataTracker() {
@@ -140,7 +140,7 @@ public class ElHuevoEntity extends TameableEntity {
                 if (this.random.nextInt(3) == 0) {
                     this.setOwner(player);
                     this.navigation.stop();
-                    this.setTarget((LivingEntity)null);
+                    this.setTarget(null);
                     this.setSitting(true);
                     this.world.sendEntityStatus(this, (byte)7);
                 } else {

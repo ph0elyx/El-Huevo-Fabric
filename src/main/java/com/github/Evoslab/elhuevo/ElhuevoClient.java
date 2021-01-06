@@ -8,8 +8,6 @@ public class ElhuevoClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        EntityRendererRegistry.INSTANCE.register(Elhuevo.EL_HUEVE, (dispatcher, context) -> {
-            return new ElHuevoEntityRender(dispatcher);
-        });
+        EntityRendererRegistry.INSTANCE.register(Elhuevo.EL_HUEVE, (dispatcher, context) -> new ElHuevoEntityRender(dispatcher));
     }
 }

@@ -8,7 +8,7 @@ public class ElHuevoEntityRender extends MobEntityRenderer<ElHuevoEntity, ElHuev
 
 
     public ElHuevoEntityRender(EntityRenderDispatcher entityRenderDispatcher) {
-        super(entityRenderDispatcher, new ElHuevoEntityModel<ElHuevoEntity>(), 0.3f);
+        super(entityRenderDispatcher, new ElHuevoEntityModel<>(), 0.3f);
         this.addFeature(new ElHuevoClothingFeatureRenderer(this));
     }
 

@@ -13,8 +13,10 @@ public class MixinHooks {
 
         if (spawnerList != null) {
             Spawner spawner = new ElhuevoSpawner();
-            // Just to ensure the spawner list does not
-            // already contain an instance of our spawner.
+            /*
+            Just to ensure the spawner list does not
+            already contain an instance of our spawner.
+             */
             if (spawnerList.stream().noneMatch((s) -> s instanceof ElhuevoSpawner))
                 spawnerList.add(spawner);
         }

@@ -10,6 +10,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.biome.BiomeKeys;
@@ -48,6 +49,8 @@ public class ElhuevoSpawner implements Spawner {
                     BlockPos blockPos = playerEntity.getBlockPos().add(x, 0, z);
 
                     if (world.isRegionLoaded(blockPos.getX() - 10, blockPos.getY() - 10, blockPos.getZ() - 10, blockPos.getX() + 10, blockPos.getY() + 10, blockPos.getZ() + 10)) {
+                        if (!SpawnBiomes.getValues().contains(BuiltinRegistries.BIOME.getId(world.getBiome(blockPos))))
+                            return 0;
                         if (SpawnHelper.canSpawn(SpawnRestriction.Location.ON_GROUND, world, blockPos, Elhuevo.EL_HUEVE)) {
                             if (world.isNearOccupiedPointOfInterest(blockPos, 2)) {
                                 return this.spawnInHouse(world, blockPos);
@@ -70,7 +73,7 @@ public class ElhuevoSpawner implements Spawner {
         return 0;
     }
 
-    // here is where we should call it
+    // here is where we should call itc
     private int spawn(BlockPos pos, ServerWorld world) {
         ElHuevoEntity entity = Elhuevo.EL_HUEVE.create(world);
         if (entity == null) {

@@ -38,7 +38,7 @@ public class Elhuevo implements ModInitializer {
 				3 /* minGroupSize */,
 				4 /* maxGroupSize */
 		);
-		LOGGER.debug(BiomeKeys.SAVANNA.getValue());
+		LOGGER.debug(BiomeKeys.SNOWY_TAIGA.getValue());
 		FabricDefaultAttributeRegistry.register(EL_HUEVE, ElHuevoEntity.createMobAttributes());
 		Registry.register(Registry.ITEM, new Identifier("elhuevo", "elhueve_spawn_egg"), new SpawnEggItem(EL_HUEVE, 0xFFFFF5, 0x1D2635, new Item.Settings().group(ItemGroup.MISC)));
 		//Registry.register(Registry.STATUS_EFFECT, new Identifier("elhuevo", "egg_charge"), EGGCHARGE);
